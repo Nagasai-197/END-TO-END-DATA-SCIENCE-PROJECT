@@ -107,6 +107,7 @@ http://127.0.0.1:5000
 
 ## 📸 Output Screenshot
 
+![Image](https://github.com/user-attachments/assets/3d22a34f-317d-4bc0-b389-03e484df2e21)
 
 
 
