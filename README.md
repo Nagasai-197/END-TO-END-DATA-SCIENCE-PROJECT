@@ -92,5 +92,7 @@ Open your browser and go to `http://127.0.0.1:5000` to access the app.
 * Jinja2 (templating engine)
 * HTML/CSS
 
+##output
 
+![Image](https://github.com/user-attachments/assets/dc0bb96b-dfa3-455d-9948-a1fefe75f07e)
 
