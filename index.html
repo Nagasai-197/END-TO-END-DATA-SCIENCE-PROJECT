@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iris Species Predictor</title>
+  <style>
+    /* Reset some defaults */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 30px;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #5a3eae;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+      color: #444;
+    }
+
+    input[type="text"] {
+      padding: 10px 14px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+      width: 100%;
+    }
+
+    input[type="text"]:focus {
+      border-color: #5a3eae;
+      outline: none;
+      box-shadow: 0 0 6px #8e7bf5aa;
+    }
+
+    input[type="submit"] {
+      background-color: #5a3eae;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3f2f82;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f4f3ff;
+      border-left: 6px solid #5a3eae;
+      border-radius: 8px;
+      font-weight: 700;
+      color: #3a2665;
+      text-align: center;
+    }
+
+    ul.inputs-list {
+      margin-top: 15px;
+      padding-left: 0;
+      list-style: none;
+      color: #555;
+      font-weight: 600;
+    }
+
+    ul.inputs-list li {
+      margin-bottom: 5px;
+    }
+
+    .error-message {
+      margin-top: 20px;
+      color: #c0392b;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Iris Species Predictor</h1>
+    <form action="/predict" method="post">
+      {% for feature in features %}
+        <label for="{{ feature }}">{{ feature.replace('_', ' ').capitalize() }} :</label>
+        <input
+          type="text"
+          id="{{ feature }}"
+          name="{{ feature }}"
+          required
+          placeholder="Enter {{ feature.replace('_', ' ') }}"
+        />
+      {% endfor %}
+      <input type="submit" value="Predict" />
+    </form>
+
+    {% if error %}
+      <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    {% if prediction %}
+      <div class="result">
+        Prediction: <span style="color: #7d5fff;">{{ prediction.capitalize() }}</span>
+        <ul class="inputs-list">
+          {% for feature, value in zip(features, inputs) %}
+            <li>{{ feature.replace('_', ' ').capitalize() }}: {{ value }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
