@@ -1,5 +1,5 @@
-# END-TO-END-DATA-SCIENCE-PROJECT
 
+# END-TO-END DATA SCIENCE PROJECT - IRIS SPECIES PREDICTION 🌸
 
 **COMPANY:** CODTECH IT SOLUTIONS  
 **NAME:** BATHULA SRI HEMANTH NAGA SAI  
@@ -9,62 +9,69 @@
 **MENTOR:** NEELA SANTOSH  
 
 ---
-# Iris Species Prediction Web App
 
-This is a simple Flask web application that predicts the species of an Iris flower based on user input features (sepal length, sepal width, petal length, petal width) using a trained machine learning model.
+## 🔍 Project Overview
+
+This project is a simple **Flask web application** that predicts the species of an Iris flower using a trained **machine learning model** based on user inputs:  
+- Sepal Length  
+- Sepal Width  
+- Petal Length  
+- Petal Width  
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 
-task-3/
+END-TO-END-DATA-SCIENCE-PROJECT/
 │
-├── app.py                    # Flask application with prediction logic
-├── train\_iris\_model.py       # Script to train and save the model
-├── iris\_model.pkl            # Saved trained model
-├── requirements.txt          # Python dependencies
+├── app.py                  # Flask app to run the web interface
+├── train\_iris\_model.py     # Script to train and save the ML model
+├── iris\_model.pkl          # Trained machine learning model
+├── iris\_features.pkl       # Feature names for prediction
+├── iris\_target\_names.pkl   # Target class labels
+├── requirements.txt        # Python dependencies
 │
-├── templates/                # HTML templates
-│   └── index.html            # User-friendly frontend
+├── templates/
+│   └── index.html          # HTML template for the web UI
 │
-└── static/                   # (Optional) Static assets like CSS/JS/images
+└── static/                 # (Optional) For CSS, JS, images
 
 ````
 
 ---
 
-## Getting Started
+## ⚙️ Getting Started
 
-### Prerequisites
+### ✅ Prerequisites
 
 - Python 3.7 or above
-- pip (Python package manager)
+- pip package manager
 
-### Installation
+### 📦 Installation
 
-1. Clone the repository or download the project files.
-2. Navigate to the project directory:
-   ```bash
-   cd task-3
+```bash
+git clone https://github.com/Nagasai-197/END-TO-END-DATA-SCIENCE-PROJECT.git
+cd END-TO-END-DATA-SCIENCE-PROJECT
+pip install -r requirements.txt
 ````
 
-3. Install the required packages:
+---
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🧠 Model Training
 
-### Train the Model
-
-Run the training script to create the model file:
+Before running the app, train your ML model:
 
 ```bash
 python train_iris_model.py
 ```
 
-### Run the Flask Application
+This will generate the model and feature/target mapping files.
+
+---
+
+## 🚀 Running the Web App
 
 Start the Flask server:
 
@@ -72,27 +79,36 @@ Start the Flask server:
 python app.py
 ```
 
-Open your browser and go to `http://127.0.0.1:5000` to access the app.
+Then open your browser and go to:
+
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-## Usage
+## 🧪 How to Use
 
-* Enter the sepal length, sepal width, petal length, and petal width (in cm) of an Iris flower.
-* Click **Predict**.
-* The app will display the predicted Iris species.
+1. Enter the Sepal and Petal measurements (in cm).
+2. Click on **Predict**.
+3. The app will display the **predicted Iris species**.
 
 ---
 
-## Technologies Used
+## 💻 Technologies Used
 
 * Python 3
 * Flask
 * Scikit-learn
-* Jinja2 (templating engine)
+* Jinja2 (HTML templating)
 * HTML/CSS
 
-##output
+---
 
-![Image](https://github.com/user-attachments/assets/dc0bb96b-dfa3-455d-9948-a1fefe75f07e)
+## 📸 Output Screenshot
+
+
+
+
+
 
